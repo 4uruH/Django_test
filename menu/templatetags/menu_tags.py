@@ -10,4 +10,5 @@ def draw_menu(filter=None):
     data = SubMenu.objects.select_related('menu_title').filter(menu_title=filter)
     for el in data:
         sub_menus.append([el.title, el.url])
-    return {"sub_menus": sub_menus, "menu_title": filter}
+        menu_title = el.menu_title
+    return {"sub_menus": sub_menus, "menu_title": menu_title}
