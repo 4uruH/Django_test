@@ -1,0 +1,13 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+<ul>
+    <li><a>{{ menu_title }} &bigtriangledown;</a>
+        <ul>
+            {% for el in sub_menus %}
+              <li><a href='{{ el.1 }}'>{{ el.0 }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+</ul>
